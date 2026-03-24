@@ -1,0 +1,8 @@
+@keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+.carousel-track {
+  animation: infinite-scroll 60s linear infinite;
+}
