@@ -1,39 +1,17 @@
 <div class="hero bg-base-200 flex-1">
-  <div class="hero-content flex-col w-full h-full justify-start pt-16 min-w-full p-0">
+  <div class="hero-content flex-col w-full h-full justify-start min-w-full px-0 pb-0 pt-10">
     <div class="flex-1 flex items-center w-full justify-start">
       <div class="flex-auto lg:flex-1 ps-3 sm:ps-15 pe-4">
-        <h1 class="text-4xl font-bold ">Hello<span class="text-info">.</span></h1>
-
-        <div class="flex items-center -ms-4 sm:-ms-15">
-          <div class="divider divider-info w-10 sm:w-20"></div>
-          <h2 class="ms-3 text-3xl font-normal">I'm Elián</h2>
-        </div>
-
-        <div class="block">
-          <span class="text-rotate text-4xl font-bold duration-8500 leading-loose">
-            <span class="justify-items-start">
-              <span>Software Engineer</span>
-              <span>FullStack Developer</span>
-            </span>
-          </span>
-        </div>
-
-        <div class="mt-10 flex gap-5">
-          <button class="btn btn-info">Got a project?</button>
-          <button class="btn btn-outline btn-info">My resume</button>
-        </div>
+        <app-greeting />
       </div>
-      <div class="hidden lg:flex-1 lg:block">
-        <h1 class="text-5xl font-bold">Hello there</h1>
-        <p class="py-6">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.
-        </p>
+
+      <div class="hidden lg:block lg:flex-1 h-full me-7">
+        <app-profile />
       </div>
     </div>
 
-    <div class="w-full">
-      <app-octocat />
+    <div class="w-full relative">
+      <app-octocat class="absolute bottom-15 ms-5" />
 
       <app-carousel class="w-full shrink-0" />
     </div>
