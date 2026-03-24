@@ -4,5 +4,5 @@
   }
 
 .carousel-track {
-  animation: infinite-scroll 60s linear infinite;
+  animation: infinite-scroll 100s linear infinite;
 }
