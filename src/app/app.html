@@ -1,11 +1,17 @@
 <div class="bg-base-200">
-  <div class="flex flex-col h-screen">
+  <header class="flex flex-col h-screen">
     <app-navbar class="contents" />
 
     <app-home class="contents" />
-  </div>
+  </header>
 
-  <div class="mt-15">
+  <main class="flex flex-col gap-15 mt-20 px-5">
+    <div>
+      <app-about />
+    </div>
+  </main>
+
+  <div class="mt-20">
     <app-footer />
   </div>
 </div>
