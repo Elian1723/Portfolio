@@ -1,0 +1,34 @@
+<section>
+  <div class="flex items-center -ms-4 sm:-ms-15">
+    <div class="divider divider-info w-10 sm:w-30"></div>
+    <h2 class="ms-3 text-3xl font-bold">Skills</h2>
+  </div>
+
+  <div role="tablist" class="tabs tabs-border justify-center">
+    <a role="tab"
+       class="tab text-base md:text-lg"
+       [class.tab-active]="currentTab() === 'languages'"
+       (click)="changeCurrentTab('languages')">Languages</a>
+
+    <a role="tab"
+       class="tab text-base md:text-lg"
+       [class.tab-active]="currentTab() === 'frameworks-libraries'"
+       (click)="changeCurrentTab('frameworks-libraries')">Frameworks & Libraries</a>
+
+    <a role="tab"
+       class="tab text-base md:text-lg"
+       [class.tab-active]="currentTab() === 'databases'"
+       (click)="changeCurrentTab('databases')">Databases</a>
+
+    <a role="tab"
+       class="tab text-base md:text-lg"
+       [class.tab-active]="currentTab() === 'tools'"
+       (click)="changeCurrentTab('tools')">Tools</a>
+  </div>
+
+  <div class="w-full flex justify-center pt-7">
+    <div class="inline-block">
+      <app-skill-list [currentSkills]="currentSkills()" />
+    </div>
+  </div>
+</section>
