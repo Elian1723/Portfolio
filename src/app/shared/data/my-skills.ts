@@ -1,4 +1,4 @@
-import { SkillIcon } from '../interfaces/skillIcon';
+import { SkillIcon } from '../../interfaces/skillIcon';
 
 export const MySkills: SkillIcon[] = [
   {

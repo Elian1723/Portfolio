@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { MySkills } from '../shared/data/my-skills';
-import { SkillIcon } from '../shared/interfaces/skillIcon';
+import { SkillIcon } from '../interfaces/skillIcon';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SkillIcons {
+export class SkillIconService {
   private skills = MySkills;
 
   public getAll(): SkillIcon[] {

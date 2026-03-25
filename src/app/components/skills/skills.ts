@@ -1,19 +1,19 @@
 import { Component, inject, signal, computed, effect } from '@angular/core';
-import { SkillIcons } from '../../services/skillIcons';
-import { SkillIcon } from '../../shared/interfaces/skillIcon';
-import { SkillList } from "./skillList/skillList";
+import { SkillIconService } from '../../services/skillIconService';
+import { SkillIcon } from '../../interfaces/skillIcon';
+import { Icon } from "../../shared/components/icon/icon";
 
 type tabItem = 'languages' | 'frameworks-libraries' | 'databases' | 'tools'
 
 @Component({
   selector: 'app-skills',
-  imports: [SkillList],
+  imports: [Icon],
   templateUrl: './skills.html',
 })
 export class Skills {
-  private skills = inject(SkillIcons);
+  private skillService = inject(SkillIconService);
   protected currentTab = signal<tabItem>('languages');
-  protected currentSkills = signal<SkillIcon[]>(this.skills.getLanguages());
+  protected currentSkills = signal<SkillIcon[]>(this.skillService.getLanguages());
 
   protected changeCurrentTab(tab: tabItem): void {
     this.currentTab.update(() => tab);
@@ -24,16 +24,16 @@ export class Skills {
 
     switch (skillOption) {
       case 'languages':
-        this.currentSkills.update(() => this.skills.getLanguages());
+        this.currentSkills.update(() => this.skillService.getLanguages());
         break;
       case 'frameworks-libraries':
-        this.currentSkills.update(() => this.skills.getFrameworksLibraries());
+        this.currentSkills.update(() => this.skillService.getFrameworksLibraries());
         break;
       case 'databases':
-        this.currentSkills.update(() => this.skills.getDatabases());
+        this.currentSkills.update(() => this.skillService.getDatabases());
         break;
       case 'tools':
-        this.currentSkills.update(() => this.skills.getTools());
+        this.currentSkills.update(() => this.skillService.getTools());
         break;
     }
   })

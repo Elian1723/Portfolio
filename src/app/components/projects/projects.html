@@ -1,0 +1,52 @@
+<section class="lg:px-16">
+  <div class="flex flex-col items-center">
+    <h2 class="ms-3 text-3xl font-bold">Projects</h2>
+
+    <div class="block mt-3">
+      <div class="divider divider-info divider-horizontal h-10 w-10"></div>
+    </div>
+
+    <div class="rounded-full bg-info size-3"></div>
+  </div>
+
+  <div class="flex flex-col gap-14 mt-7">
+    @for (project of projects(); track project.id; let index = $index) {
+    <div class="w-full flex flex-col items-center gap-5 lg:w-3/4 lg:justify-between lg:flex-row"
+        [class.lg:flex-row-reverse]="index % 2 != 0"
+        [class.lg:self-end]="index % 2 != 0">
+      <div class="flex flex-col gap-2 lg:w-2/4">
+        <h3 class="text-2xl font-bold">{{ project.title }}</h3>
+
+        <div class="flex flex-wrap gap-2">
+          @for (badge of project.badges; track badge) {
+          <div class="badge badge-neutral font-bold">{{ badge }}</div>
+          }
+        </div>
+
+        <p>{{ project.description }}</p>
+
+        <div class="flex items-center gap-5 mt-2">
+          @if (project.githubUrl) {
+          <a href="{{ project.githubUrl }}" class="btn btn-info">View GitHub</a>
+          }
+
+          @if (project.projectUrl) {
+          <a href="{{ project.projectUrl }}" class="border-b-2 hover:text-info transition-all flex items-center gap-2">
+            View Project
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5" />
+            </svg>
+          </a>
+          }
+        </div>
+      </div>
+
+      <div>
+        <img src="{{ project.imageUrl }}" alt="preview of {{ project.title }} project" class="w-96 rounded-xl">
+      </div>
+    </div>
+    }
+  </div>
+</section>

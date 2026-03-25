@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { SkillIcons } from '../../../services/skillIcons';
+import { SkillIconService } from '../../../services/skillIconService';
 import { Icon } from "../../../shared/components/icon/icon";
 
 @Component({
@@ -9,5 +9,5 @@ import { Icon } from "../../../shared/components/icon/icon";
   styleUrl: './carousel.css'
 })
 export class Carousel {
-  protected skillIcons = inject(SkillIcons);
+  protected skillIcons = inject(SkillIconService);
 }

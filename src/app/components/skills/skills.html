@@ -1,34 +1,30 @@
 <section>
   <div class="flex items-center -ms-4 sm:-ms-15">
-    <div class="divider divider-info w-10 sm:w-30"></div>
+    <div class="divider divider-info w-10 sm:w-44"></div>
     <h2 class="ms-3 text-3xl font-bold">Skills</h2>
   </div>
 
   <div role="tablist" class="tabs tabs-border justify-center">
-    <a role="tab"
-       class="tab text-base md:text-lg"
-       [class.tab-active]="currentTab() === 'languages'"
-       (click)="changeCurrentTab('languages')">Languages</a>
+    <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === 'languages'"
+      [class.text-info]="currentTab() === 'languages'" (click)="changeCurrentTab('languages')">Languages</a>
 
-    <a role="tab"
-       class="tab text-base md:text-lg"
-       [class.tab-active]="currentTab() === 'frameworks-libraries'"
-       (click)="changeCurrentTab('frameworks-libraries')">Frameworks & Libraries</a>
+    <a role="tab" class="tab text-base transition-all md:text-lg"
+      [class.tab-active]="currentTab() === 'frameworks-libraries'"
+      [class.text-info]="currentTab() === 'frameworks-libraries'"
+      (click)="changeCurrentTab('frameworks-libraries')">Frameworks & Libraries</a>
 
-    <a role="tab"
-       class="tab text-base md:text-lg"
-       [class.tab-active]="currentTab() === 'databases'"
-       (click)="changeCurrentTab('databases')">Databases</a>
+    <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === 'databases'"
+      [class.text-info]="currentTab() === 'databases'" (click)="changeCurrentTab('databases')">Databases</a>
 
-    <a role="tab"
-       class="tab text-base md:text-lg"
-       [class.tab-active]="currentTab() === 'tools'"
-       (click)="changeCurrentTab('tools')">Tools</a>
+    <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === 'tools'"
+      [class.text-info]="currentTab() === 'tools'" (click)="changeCurrentTab('tools')">Tools</a>
   </div>
 
   <div class="w-full flex justify-center pt-7">
-    <div class="inline-block">
-      <app-skill-list [currentSkills]="currentSkills()" />
+    <div class="flex flex-wrap justify-center gap-10">
+      @for (skill of currentSkills(); track skill.id) {
+      <app-icon name="{{ skill.iconName }}" />
+      }
     </div>
   </div>
 </section>
