@@ -70,7 +70,7 @@ export const MySkills: SkillIcon[] = [
   {
     id: 'mysql',
     name: 'MySQL',
-    iconName: 'simple-icons/mysql',
+    iconName: 'lineicons/mysql',
     type: 'database'
   },
   {
@@ -82,8 +82,14 @@ export const MySkills: SkillIcon[] = [
   {
     id: 'mssql',
     name: 'SQL Server',
-    iconName: 'devicon-plain/microsoftsqlserver-wordmark',
+    iconName: 'devicon-plain/microsoftsqlserver',
     type: 'database'
+  },
+  {
+    id: 'linux',
+    name: 'Linux',
+    iconName: 'simple-icons/linux',
+    type: 'tool'
   },
   {
     id: 'git',
@@ -95,6 +101,12 @@ export const MySkills: SkillIcon[] = [
     id: 'github',
     name: 'GitHub',
     iconName: 'simple-icons/github',
+    type: 'tool'
+  },
+  {
+    id: 'copilot',
+    name: 'GitHub Copilot',
+    iconName: 'simple-icons/githubcopilot',
     type: 'tool'
   },
   {
@@ -110,33 +122,21 @@ export const MySkills: SkillIcon[] = [
     type: 'tool'
   },
   {
-    id: 'linux',
-    name: 'Linux',
-    iconName: 'simple-icons/linux',
-    type: 'tool'
-  },
-  {
-    id: 'copilot',
-    name: 'GitHub Copilot',
-    iconName: 'simple-icons/githubcopilot',
-    type: 'database'
-  },
-  {
     id: 'dbeaver',
     name: 'Dbeaver',
-    iconName: 'simple-icons/dbeaver',
-    type: 'database'
+    iconName: 'devicon-plain/dbeaver',
+    type: 'tool'
   },
   {
     id: 'vs',
     name: 'Visual Studio',
     iconName: 'mdi/microsoft-visual-studio',
-    type: 'database'
+    type: 'tool'
   },
   {
     id: 'vscode',
     name: 'Visual Studio Code',
     iconName: 'mdi/microsoft-visual-studio-code',
-    type: 'database'
+    type: 'tool'
   }
 ];

@@ -5,7 +5,7 @@
     <h2 class="ms-3 text-3xl font-bold">Skills</h2>
   </div>
 
-  <div role="tablist" class="tabs tabs-border justify-center">
+  <div role="tablist" class="tabs tabs-border justify-center px-16">
     <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === 'languages'"
       [class.text-info]="currentTab() === 'languages'" (click)="changeCurrentTab('languages')">Languages</a>
 
@@ -22,7 +22,7 @@
   </div>
 
   <div class="w-full flex justify-center pt-7">
-    <div class="flex flex-wrap justify-center gap-10">
+    <div class="flex flex-wrap w-full md:w-3/4 lg:w-1/2 justify-center gap-10">
       @for (skill of currentSkills(); track skill.id) {
       <app-icon name="{{ skill.iconName }}" />
       }
