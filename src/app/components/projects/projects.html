@@ -2,11 +2,11 @@
   <div class="flex flex-col items-center">
     <h2 class="ms-3 text-3xl font-bold">Projects</h2>
 
-    <div class="rounded-full bg-info size-3 mt-3"></div>
-
-    <div class="block">
+    <div class="block mt-3">
       <div class="divider divider-info divider-horizontal h-10 w-10"></div>
     </div>
+
+    <div class="rounded-full bg-info size-3"></div>
   </div>
 
   <div class="flex flex-col gap-14 mt-7">
@@ -27,7 +27,7 @@
 
         <div class="flex items-center gap-5 mt-2">
           @if (project.githubUrl) {
-          <a href="{{ project.githubUrl }}" class="btn btn-info">View GitHub</a>
+          <a href="{{ project.githubUrl }}" class="btn btn-soft btn-info">View GitHub</a>
           }
 
           @if (project.projectUrl) {
