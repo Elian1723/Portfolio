@@ -5,5 +5,9 @@ export const routes: Routes = [
   {
     path: '',
     component: Portfolio
+  },
+  {
+    path: '**',
+    loadComponent: () => import('./pages/not-found/not-found')
   }
 ];
