@@ -5,10 +5,11 @@ import { About } from "../../components/about/about";
 import { Skills } from "../../components/skills/skills";
 import { Footer } from "../../components/footer/footer";
 import { Projects } from "../../components/projects/projects";
+import { Contact } from "../../components/contact/contact";
 
 @Component({
   selector: 'app-portfolio',
-  imports: [Navbar, Home, About, Skills, Footer, Projects],
+  imports: [Navbar, Home, About, Skills, Footer, Projects, Contact],
   templateUrl: './portfolio.html',
 })
 export class Portfolio { }

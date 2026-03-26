@@ -2,16 +2,16 @@
   <div class="flex flex-col items-center">
     <h2 class="ms-3 text-3xl font-bold">Projects</h2>
 
-    <div class="block mt-3">
+    <div class="rounded-full bg-info size-3 mt-3"></div>
+
+    <div class="block">
       <div class="divider divider-info divider-horizontal h-10 w-10"></div>
     </div>
-
-    <div class="rounded-full bg-info size-3"></div>
   </div>
 
   <div class="flex flex-col gap-14 mt-7">
     @for (project of projects(); track project.id; let index = $index) {
-    <div class="w-full flex flex-col items-center gap-5 lg:w-3/4 lg:justify-between lg:flex-row"
+    <div class="w-full flex flex-col items-center gap-7 lg:w-3/4 lg:justify-between lg:flex-row"
         [class.lg:flex-row-reverse]="index % 2 != 0"
         [class.lg:self-end]="index % 2 != 0">
       <div class="flex flex-col gap-2 lg:w-2/4">
