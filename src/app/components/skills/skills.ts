@@ -1,19 +1,18 @@
-import { Component, inject, signal, computed, effect } from '@angular/core';
-import { SkillIconService } from '../../services/skillIconService';
-import { SkillIcon } from '../../interfaces/skillIcon';
-import { Icon } from "../../shared/components/icon/icon";
+import { Component, inject, signal, computed, effect, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { IconService } from '../../services/iconService';
+import { Icon } from '../../interfaces/icon';
 
 type tabItem = 'languages' | 'frameworks-libraries' | 'databases' | 'tools'
 
 @Component({
   selector: 'app-skills',
-  imports: [Icon],
   templateUrl: './skills.html',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Skills {
-  private skillService = inject(SkillIconService);
+  private skillService = inject(IconService);
   protected currentTab = signal<tabItem>('languages');
-  protected currentSkills = signal<SkillIcon[]>(this.skillService.getLanguages());
+  protected currentSkills = signal<Icon[]>(this.skillService.getLanguages());
 
   protected changeCurrentTab(tab: tabItem): void {
     this.currentTab.update(() => tab);

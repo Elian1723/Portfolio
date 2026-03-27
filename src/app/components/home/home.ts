@@ -1,15 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
 import { Greeting } from "./greeting/greeting";
 import { ProfileCircle } from "./profile-circle/profile-circle";
 import { NgxMarqueeComponent } from "@omnedia/ngx-marquee";
-import { Icon } from "../../shared/components/icon/icon";
-import { SkillIconService } from '../../services/skillIconService';
+import { IconService } from '../../services/iconService';
 
 @Component({
   selector: 'app-home',
-  imports: [Greeting, ProfileCircle, NgxMarqueeComponent, Icon],
+  imports: [Greeting, ProfileCircle, NgxMarqueeComponent],
   templateUrl: './home.html',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Home {
-  protected skillIcons = inject(SkillIconService);
+  protected skillIconService = inject(IconService);
 }

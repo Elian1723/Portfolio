@@ -22,8 +22,8 @@
 
   <div class="w-full flex justify-center pt-7">
     <div class="flex flex-wrap w-full md:w-3/4 lg:w-1/2 justify-center gap-10">
-      @for (skill of currentSkills(); track skill.id) {
-      <app-icon name="{{ skill.iconName }}" />
+      @for (icon of currentSkills(); track $index) {
+        <iconify-icon class="text-4xl" [icon]="icon.iconName"></iconify-icon>
       }
     </div>
   </div>
