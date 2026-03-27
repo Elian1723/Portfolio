@@ -1,39 +1,34 @@
-import { Component, inject, signal, computed, effect, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, inject, signal, computed, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IconService } from '../../services/iconService';
-import { Icon } from '../../interfaces/icon';
+import { TitleCasePipe } from '@angular/common';
 
 type tabItem = 'languages' | 'frameworks-libraries' | 'databases' | 'tools'
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.html',
+  imports: [TitleCasePipe],
+  standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Skills {
   private skillService = inject(IconService);
   protected currentTab = signal<tabItem>('languages');
-  protected currentSkills = signal<Icon[]>(this.skillService.getLanguages());
+  protected tabs = signal<tabItem[]>(['languages', 'frameworks-libraries', 'databases', 'tools']);
+
+  protected currentIcons = computed(() => {
+    const tab = this.currentTab();
+
+    switch (tab) {
+      case 'languages': return this.skillService.getLanguages();
+      case 'frameworks-libraries': return this.skillService.getFrameworksLibraries();
+      case 'databases': return this.skillService.getDatabases();
+      case 'tools': return this.skillService.getTools();
+      default: return [];
+    }
+  });
 
   protected changeCurrentTab(tab: tabItem): void {
-    this.currentTab.update(() => tab);
+    this.currentTab.set(tab);
   }
-
-  protected onCurrentTabChange = effect(() => {
-    const skillOption = this.currentTab();
-
-    switch (skillOption) {
-      case 'languages':
-        this.currentSkills.update(() => this.skillService.getLanguages());
-        break;
-      case 'frameworks-libraries':
-        this.currentSkills.update(() => this.skillService.getFrameworksLibraries());
-        break;
-      case 'databases':
-        this.currentSkills.update(() => this.skillService.getDatabases());
-        break;
-      case 'tools':
-        this.currentSkills.update(() => this.skillService.getTools());
-        break;
-    }
-  })
 }

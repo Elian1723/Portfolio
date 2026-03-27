@@ -4,26 +4,19 @@
     <h2 class="ms-3 text-3xl font-bold">Skills</h2>
   </div>
 
-  <div role="tablist" class="tabs tabs-border justify-center px-16">
-    <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === 'languages'"
-      [class.text-info]="currentTab() === 'languages'" (click)="changeCurrentTab('languages')">Languages</a>
-
-    <a role="tab" class="tab text-base transition-all md:text-lg"
-      [class.tab-active]="currentTab() === 'frameworks-libraries'"
-      [class.text-info]="currentTab() === 'frameworks-libraries'"
-      (click)="changeCurrentTab('frameworks-libraries')">Frameworks & Libraries</a>
-
-    <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === 'databases'"
-      [class.text-info]="currentTab() === 'databases'" (click)="changeCurrentTab('databases')">Databases</a>
-
-    <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === 'tools'"
-      [class.text-info]="currentTab() === 'tools'" (click)="changeCurrentTab('tools')">Tools</a>
+  <div role="tablist" class="tabs tabs-border justify-center px-4 sm:px-16">
+    @for (tab of tabs(); track tab) {
+    <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === tab"
+      [class.text-info]="currentTab() === tab" (click)="changeCurrentTab(tab)">
+      {{ tab | titlecase }}
+    </a>
+    }
   </div>
 
   <div class="w-full flex justify-center pt-7">
     <div class="flex flex-wrap w-full md:w-3/4 lg:w-1/2 justify-center gap-10">
-      @for (icon of currentSkills(); track $index) {
-        <iconify-icon class="text-4xl" [icon]="icon.iconName"></iconify-icon>
+      @for (icon of currentIcons(); track icon.iconName) {
+      <iconify-icon class="text-4xl" [attr.icon]="icon.iconName"></iconify-icon>
       }
     </div>
   </div>
