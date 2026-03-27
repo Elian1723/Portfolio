@@ -11,9 +11,9 @@
     </div>
 
     <div class="w-full bg-neutral py-1">
-      <om-marquee [animationDuration]="'80s'" [marqueeGap]="'6rem'" [pauseOnHover]="false">
+      <om-marquee [animationDuration]="'20s'" [marqueeGap]="'6rem'" [pauseOnHover]="false">
         @for (icon of skillIconService.getAllSkills(); track $index) {
-        <ng-template [omMarqueeItem]="car">
+        <ng-template [omMarqueeItem]="icon">
           <p class="inline-flex w-9">
             <iconify-icon class="text-4xl" [icon]="icon.iconName"></iconify-icon>
           </p>
