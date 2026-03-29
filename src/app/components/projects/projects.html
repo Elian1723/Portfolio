@@ -9,44 +9,63 @@
     <div class="rounded-full bg-info size-3"></div>
   </div>
 
-  <div class="flex flex-col gap-14 mt-7">
+  <div class="flex flex-col gap-14 mt-7 items-center">
     @for (project of projects(); track project.id; let index = $index) {
-    <div class="w-full flex flex-col items-center gap-7 lg:w-3/4 lg:justify-between lg:flex-row"
-        [class.lg:flex-row-reverse]="index % 2 != 0"
-        [class.lg:self-end]="index % 2 != 0">
-      <div class="flex flex-col gap-2 lg:w-2/4">
-        <h3 class="text-2xl font-bold">{{ project.title }}</h3>
+    <om-fade [direction]="index % 2 == 0 ? 'left' : 'right'" [transitionDuration]="'1s'" [animateOnlyOnce]="true">
+      <div class="flex flex-col items-center gap-5 lg:justify-between lg:flex-row"
+        [class.lg:flex-row-reverse]="index % 2 != 0" [class.lg:self-end]="index % 2 != 0">
+        <div class="flex flex-col gap-2 lg:w-2/4 xl:w-3/5">
+          <h3 class="text-2xl font-bold">{{ project.title }}</h3>
 
-        <div class="flex flex-wrap gap-2">
-          @for (badge of project.badges; track badge) {
-          <div class="badge badge-neutral font-bold">{{ badge }}</div>
-          }
+          <div class="flex flex-wrap gap-2">
+            @for (badge of project.badges; track badge) {
+            <div class="badge badge-neutral font-bold">{{ badge }}</div>
+            }
+          </div>
+
+          <p class="lg:pe-10">{{ project.description }}</p>
+
+          <div class="flex items-center gap-5 mt-2">
+            @if (project.githubUrl) {
+            <a href="{{ project.githubUrl }}" class="btn btn-soft btn-info">View GitHub</a>
+            }
+
+            @if (project.projectUrl) {
+            <a href="{{ project.projectUrl }}"
+              class="border-b-2 hover:text-info transition-all flex items-center gap-2">
+              View Project
+
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5" />
+              </svg>
+            </a>
+            }
+          </div>
         </div>
 
-        <p>{{ project.description }}</p>
 
-        <div class="flex items-center gap-5 mt-2">
-          @if (project.githubUrl) {
-          <a href="{{ project.githubUrl }}" class="btn btn-soft btn-info">View GitHub</a>
-          }
-
-          @if (project.projectUrl) {
-          <a href="{{ project.projectUrl }}" class="border-b-2 hover:text-info transition-all flex items-center gap-2">
-            View Project
-
-            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5" />
-            </svg>
-          </a>
-          }
+        <div>
+          <div class="hover-3d">
+            <img src="{{ project.imageUrl }}" alt="preview of {{ project.title }} project"
+            class="max-w-80 sm:max-w-100 rounded-2xl shadow-xl shadow-base-300">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
-
-      <div>
-        <img src="{{ project.imageUrl }}" alt="preview of {{ project.title }} project" class="w-96 rounded-xl shadow-xl shadow-base-300">
-      </div>
-    </div>
+    </om-fade>
     }
+
+    <a href="https://github.com/Elian1723?tab=repositories" class="btn btn-soft btn-info w-60 my-5" >
+      <iconify-icon class="text-3xl" icon="line-md:github-loop"></iconify-icon>
+      More projects
+    </a>
   </div>
 </div>
