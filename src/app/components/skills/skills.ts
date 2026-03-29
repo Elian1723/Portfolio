@@ -12,7 +12,7 @@ type tabItem = 'languages' | 'frameworks-libraries' | 'databases' | 'tools'
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Skills {
-  private skillService = inject(IconService);
+  protected iconService = inject(IconService);
   protected currentTab = signal<tabItem>('languages');
   protected tabs = signal<tabItem[]>(['languages', 'frameworks-libraries', 'databases', 'tools']);
 
@@ -20,10 +20,10 @@ export class Skills {
     const tab = this.currentTab();
 
     switch (tab) {
-      case 'languages': return this.skillService.getLanguages();
-      case 'frameworks-libraries': return this.skillService.getFrameworksLibraries();
-      case 'databases': return this.skillService.getDatabases();
-      case 'tools': return this.skillService.getTools();
+      case 'languages': return this.iconService.getLanguages();
+      case 'frameworks-libraries': return this.iconService.getFrameworksLibraries();
+      case 'databases': return this.iconService.getDatabases();
+      case 'tools': return this.iconService.getTools();
       default: return [];
     }
   });
