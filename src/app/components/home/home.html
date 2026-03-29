@@ -19,9 +19,7 @@
       <om-marquee [animationDuration]="'80s'" [marqueeGap]="'6rem'" [pauseOnHover]="false">
         @for (icon of skillIconService.getAllSkills(); track $index) {
         <ng-template [omMarqueeItem]="icon">
-          <p class="inline-flex w-9">
-            <iconify-icon class="text-4xl" [icon]="icon.iconName"></iconify-icon>
-          </p>
+          <iconify-icon class="text-4xl block size-10" [icon]="icon.iconName"></iconify-icon>
         </ng-template>
         }
       </om-marquee>

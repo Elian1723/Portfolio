@@ -32,12 +32,14 @@
     "@omnedia/ngx-fade": "^4.0.1",
     "@omnedia/ngx-flickering-grid": "^4.0.1",
     "@omnedia/ngx-marquee": "^4.0.1",
+    "@omnedia/ngx-number-ticker": "^4.0.1",
     "@omnedia/ngx-orb": "^4.0.1",
     "@omnedia/ngx-particles": "^4.0.1",
     "@omnedia/ngx-typewriter": "^4.0.1",
     "iconify-icon": "^3.0.2",
     "ogl": "^1.0.11",
     "rxjs": "~7.8.0",
+    "three": "^0.182.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

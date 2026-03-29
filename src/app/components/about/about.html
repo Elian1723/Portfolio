@@ -1,6 +1,56 @@
 <div class="w-full flex flex-col-reverse lg:flex-row justify-between gap-10 lg:px-16">
-  <div class="flex justify-center">
-    <svg class="w-72 lg:w-96" viewBox="0 0 500 281" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="flex justify-start sm:justify-center">
+    <ul class="timeline timeline-vertical">
+      <li>
+        <div class="timeline-start">2023</div>
+        <div class="timeline-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-info h-5 w-5">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="timeline-end timeline-box text-base">Data entry operator at El Zeppelin</div>
+        <hr class="h-15" />
+      </li>
+      <li>
+        <hr class="h-15" />
+        <div class="timeline-start">2023</div>
+        <div class="timeline-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-info h-5 w-5">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="timeline-end timeline-box text-base">Junior Software Developer at El Zeppelin</div>
+        <hr class="h-15 bg-info" />
+      </li>
+      <li>
+        <hr class="h-15 bg-info" />
+        <div class="timeline-start">{{ year() }}</div>
+        <div class="timeline-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-info h-5 w-5">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="timeline-end timeline-box text-base">Present</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="flex flex-col items-center gap-3 lg:w-2/4">
+    <h1 class="text-3xl font-bold">About me</h1>
+
+    <p>
+      I am a developer passionate about software design and systems architecture. I am characterized by my interest in
+      continuous learning, innovation, and constant improvement, always seeking to add value to the projects I
+      participate in.
+    </p>
+
+    <svg class="w-72 mt-5 sm:mt-0lg:w-96" viewBox="0 0 500 281" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_62_174)">
         <path
           d="M37.6182 280.859L37.092 279.889C44.1474 276.082 52.9282 271.345 57.5145 263.57C62.0356 255.906 62.137 245.499 57.7792 236.411C54.0707 228.675 47.2583 221.745 38.0786 216.369C36.268 215.309 34.3673 214.304 32.529 213.332C28.0859 210.983 23.4915 208.553 19.7031 205.107C14.4854 200.36 10.5375 192.394 13.48 185.298C14.4477 183.034 16.0326 181.085 18.0546 179.674C20.0766 178.262 22.4548 177.445 24.9191 177.314L24.9815 178.416C22.7239 178.535 20.5451 179.284 18.6923 180.576C16.8394 181.869 15.3868 183.653 14.4993 185.728C11.765 192.321 15.5165 199.804 20.4487 204.291C24.1335 207.644 28.6649 210.04 33.0472 212.357C34.8958 213.334 36.8074 214.345 38.6389 215.417C48.0095 220.905 54.9733 228 58.7774 235.934C63.2918 245.35 63.1734 256.154 58.4681 264.13C53.7255 272.169 44.7945 276.988 37.6182 280.859Z"
@@ -119,15 +169,14 @@
         </clipPath>
       </defs>
     </svg>
-  </div>
 
-  <div class="flex flex-col gap-3 lg:w-2/4">
-    <h1 class="text-3xl text-center font-bold">About me</h1>
-
-    <p>
-      I am a developer passionate about software design and systems architecture. I am characterized by my interest in
-      continuous learning, innovation, and constant improvement, always seeking to add value to the projects I
-      participate in.
-    </p>
+    <div class="w-full flex justify-center md:justify-start text-lg">
+      <div class="flex flex-col items-center">
+        <div class="flex text-3xl">
+          <om-number-ticker [countTo]="2" class="font-bold"></om-number-ticker><span class="text-info">+</span>
+        </div>
+        Years of experience
+      </div>
+    </div>
   </div>
 </div>
