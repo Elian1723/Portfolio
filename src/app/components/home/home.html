@@ -1,13 +1,16 @@
 <div class="hero flex-1">
-  <div class="hero-content flex-col w-full h-full justify-start min-w-full px-0 pb-0 pt-10">
+  <div class="hero-content flex-col w-full h-full justify-start min-w-full px-0 pb-0">
     <div class="flex flex-1 items-center gap-5 w-full justify-start">
-      <div class="flex-auto lg:flex-1 ps-3 sm:ps-15 pe-4">
+      <div class="flex-auto ps-3 lg:flex-1 sm:ps-15 pe-4">
         <app-greeting />
       </div>
 
-      <aside class="hidden lg:block lg:flex-1 h-full me-24">
+      <aside class="hidden lg:block lg:flex-1 h-full me-0 xl:me-24">
         <div class="w-full h-full flex items-center justify-end">
-          <app-profile-circle />
+          <om-orb class="h-full w-full">
+            <div class="size-11/12 xl:size-5/6">
+            </div>
+          </om-orb>
         </div>
       </aside>
     </div>

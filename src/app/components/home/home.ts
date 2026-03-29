@@ -1,12 +1,12 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { Greeting } from "./greeting/greeting";
-import { ProfileCircle } from "./profile-circle/profile-circle";
 import { NgxMarqueeComponent, OmMarqueeItemDirective } from "@omnedia/ngx-marquee";
 import { IconService } from '../../services/iconService';
+import { NgxOrbComponent } from '@omnedia/ngx-orb';
 
 @Component({
   selector: 'app-home',
-  imports: [Greeting, ProfileCircle, NgxMarqueeComponent, OmMarqueeItemDirective],
+  imports: [Greeting, NgxMarqueeComponent, OmMarqueeItemDirective, NgxOrbComponent],
   templateUrl: './home.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
