@@ -1,13 +1,15 @@
 <div class="bg-base-200">
   <om-flickering-grid [maxOpacity]="0.2">
-  <header id="home" class="flex flex-col h-screen">
+    <header id="home" class="flex flex-col h-screen">
       <app-navbar class="contents" />
 
       <app-home class="contents" />
     </header>
   </om-flickering-grid>
 
-  <main class="flex flex-col gap-20 mt-20 px-5">
+
+<om-particles>
+  <main class="relative z-10 flex flex-col gap-20 mt-20 px-5">
     <section id="about">
       <app-about />
     </section>
@@ -24,6 +26,7 @@
       <app-contact />
     </section>
   </main>
+</om-particles>
 
   <div class="mt-20">
     <app-footer />

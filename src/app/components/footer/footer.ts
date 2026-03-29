@@ -9,6 +9,6 @@ import { IconService } from '../../services/iconService';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Footer {
-  protected skillIconService = inject(IconService);
+  protected iconService = inject(IconService);
   protected year = signal<number>(new Date().getFullYear())
 }
