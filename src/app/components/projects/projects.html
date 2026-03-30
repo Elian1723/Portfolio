@@ -12,12 +12,12 @@
   <div class="flex flex-col gap-14 mt-7 items-center">
     @for (project of projects(); track project.id; let index = $index) {
     <om-fade [direction]="index % 2 == 0 ? 'left' : 'right'" [transitionDuration]="'1s'" [animateOnlyOnce]="true">
-      <div class="flex flex-col items-center gap-5 lg:justify-between lg:flex-row"
+      <div class="flex flex-col items-center gap-10 lg:justify-between lg:flex-row"
         [class.lg:flex-row-reverse]="index % 2 != 0" [class.lg:self-end]="index % 2 != 0">
         <div class="flex flex-col gap-2 lg:w-2/4 xl:w-3/5">
           <h3 class="text-2xl font-bold">{{ project.title }}</h3>
 
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-2 lg:w-11/12">
             @for (badge of project.badges; track badge) {
             <div class="badge badge-neutral font-bold">{{ badge }}</div>
             }
