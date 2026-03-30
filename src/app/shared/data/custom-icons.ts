@@ -104,12 +104,6 @@ export const MySkills: Icon[] = [
     type: 'tool'
   },
   {
-    id: 'copilot',
-    name: 'GitHub Copilot',
-    iconName: 'devicon-plain:githubcopilot',
-    type: 'tool'
-  },
-  {
     id: 'docker',
     name: 'Docker',
     iconName: 'devicon-plain:docker',
@@ -138,6 +132,36 @@ export const MySkills: Icon[] = [
     name: 'Visual Studio Code',
     iconName: 'devicon-plain:vscode',
     type: 'tool'
+  },
+  {
+    id: 'figma',
+    name: 'Figma',
+    iconName: 'devicon-plain:figma',
+    type: 'tool'
+  },
+  {
+    id: 'copilot',
+    name: 'GitHub Copilot',
+    iconName: 'devicon-plain:githubcopilot',
+    type: 'ia'
+  },
+  {
+    id: 'claude',
+    name: 'Claude',
+    iconName: 'simple-icons:claude',
+    type: 'ia'
+  },
+  {
+    id: 'perplexity',
+    name: 'Perplexity',
+    iconName: 'simple-icons:perplexity',
+    type: 'ia'
+  },
+  {
+    id: 'gemini',
+    name: 'Gemini',
+    iconName: 'simple-icons:googlegemini',
+    type: 'ia'
   },
   {
     id: 'linkedin',

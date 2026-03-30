@@ -4,7 +4,7 @@ export const MyProjects: Project[] = [
   {
     id: "gifs-app",
     title: "GifsApp",
-    badges: ["Angular", "TailwindCSS", "DaisyUI"],
+    badges: ["Angular", "TailwindCSS", "Flowbite"],
     description: "Search for gifs with history and memory storage. Built with Angular 21.",
     githubUrl: "https://github.com/Elian1723/gifs-apps",
     projectUrl: "https://gifs-app-elian.netlify.app/",

@@ -1,4 +1,4 @@
-export type IconType = 'language' | 'framework-library' | 'database' | 'tool' | 'social';
+export type IconType = 'language' | 'framework-library' | 'database' | 'tool' | 'social' | 'ia';
 
 export interface Icon {
   id: string;

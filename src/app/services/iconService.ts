@@ -17,7 +17,8 @@ export class IconService {
       s.type === 'language' ||
       s.type === 'framework-library' ||
       s.type === 'database' ||
-      s.type === 'tool'
+      s.type === 'tool' ||
+      s.type === 'ia'
     );
   }
 
@@ -35,5 +36,9 @@ export class IconService {
 
   public getTools(): Icon[] {
     return this.skills.filter(s => s.type === 'tool');
+  }
+
+  public getIAs(): Icon[] {
+    return this.skills.filter(s => s.type === 'ia');
   }
 }
