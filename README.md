@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="Tailwind" />
   <img src="https://img.shields.io/badge/daisyUI-ffC934?style=flat&logo=daisyui&logoColor=white" alt="daisyUI" />
-  <img src="https://img.shields.io/badge/Iconify-1769aa?style=flat&logo=iconify&logoColor=white" alt="Iconify" />
+  <img src="https://img.shields.io/badge/NgIcons-DD0031?style=flat&logo=angular&logoColor=white" alt="NgIcons" />
   <img src="https://img.shields.io/badge/ngx--ui-000000?style=flat&logo=angular&logoColor=white" alt="ngx-ui" />
 </p>
 
