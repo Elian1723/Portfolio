@@ -1,11 +1,13 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, viewChild } from '@angular/core';
+import { Component, ElementRef, inject, viewChild } from '@angular/core';
 import { IconService } from '../../services/iconService';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import * as socialIcons from '../../shared/icons/socialIcons'
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [NgIcon],
   templateUrl: './contact.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  providers: [provideIcons(socialIcons)]
 })
 export class Contact {
   private modalRef = viewChild<ElementRef<HTMLDialogElement>>('warning_modal');
