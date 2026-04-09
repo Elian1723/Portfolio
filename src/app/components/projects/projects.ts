@@ -1,14 +1,17 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ProjectService } from '../../services/projectService';
 import { NgxFadeComponent } from '@omnedia/ngx-fade';
+import * as socialIcons from '../../shared/icons/socialIcons'
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { IconService } from '../../services/iconService';
 
 @Component({
   selector: 'app-projects',
-  imports: [NgxFadeComponent],
+  imports: [NgxFadeComponent, NgIcon],
   templateUrl: './projects.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  providers: [provideIcons(socialIcons)]
 })
 export class Projects {
-  private projectService = inject(ProjectService);
-  protected projects = signal(this.projectService.getAll());
+  protected projectService = inject(ProjectService);
+  protected iconService = inject(IconService);
 }

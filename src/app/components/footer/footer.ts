@@ -1,12 +1,14 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { IconService } from '../../services/iconService';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import * as socialIcons from '../../shared/icons/socialIcons'
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink],
+  imports: [RouterLink, NgIcon],
   templateUrl: './footer.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  providers: [provideIcons(socialIcons)]
 })
 export class Footer {
   protected iconService = inject(IconService);

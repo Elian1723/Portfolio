@@ -1,14 +1,16 @@
 import { Component, inject, signal, computed } from '@angular/core';
-import { NgIcon } from '@ng-icons/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
 import { IconService } from '../../services/iconService';
 import { TitleCasePipe, UpperCasePipe } from '@angular/common';
+import * as skillsIcons from '../../shared/icons/skillIcons'
 
 type tabItem = 'languages' | 'frameworks-libraries' | 'databases' | 'tools' | 'ia';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.html',
-  imports: [NgIcon, TitleCasePipe, UpperCasePipe]
+  imports: [NgIcon, TitleCasePipe, UpperCasePipe],
+  providers: [provideIcons(skillsIcons)]
 })
 export class Skills {
   protected iconService = inject(IconService);

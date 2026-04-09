@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { NgxNumberTickerComponent } from '@omnedia/ngx-number-ticker';
 
 @Component({
@@ -8,4 +8,19 @@ import { NgxNumberTickerComponent } from '@omnedia/ngx-number-ticker';
 })
 export class About {
   protected year = signal(new Date().getFullYear());
+  private startDate = signal(new Date(2023, 11, 1));
+
+  protected yearsOfExperience = computed(() => {
+    const today = new Date();
+    const start = this.startDate();
+
+    let years = today.getFullYear() - start.getFullYear();
+
+    const hasMonthPassed = today.getMonth() >= start.getMonth();
+    if (!hasMonthPassed) {
+      years--;
+    }
+
+    return years;
+  });
 }

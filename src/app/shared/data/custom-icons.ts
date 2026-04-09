@@ -106,7 +106,7 @@ export const MySkills: Icon[] = [
   {
     id: 'docker',
     name: 'Docker',
-    iconName: 'simpleDocker',
+    iconName: 'diDockerPlain',
     type: 'tool'
   },
   {
@@ -178,7 +178,7 @@ export const MySkills: Icon[] = [
   {
     id: 'email',
     name: 'Email',
-    iconName: 'matEmail',
+    iconName: 'ionMail',
     type: 'social'
   }
 ];
