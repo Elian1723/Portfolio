@@ -23,7 +23,7 @@
     <div class="flex flex-wrap w-full md:w-3/4 lg:w-1/2 justify-center gap-10">
       @for (icon of currentIcons(); track icon.iconName) {
         <div class="tooltip tooltip-info" [attr.data-tip]="icon.name">
-          <iconify-icon class="text-4xl block size-10 transition-all hover:scale-110" [attr.icon]="icon.iconName"></iconify-icon>
+          <ng-icon [name]="icon.iconName" class="text-4xl block size-10 transition-all hover:scale-110"></ng-icon>
         </div>
       }
     </div>

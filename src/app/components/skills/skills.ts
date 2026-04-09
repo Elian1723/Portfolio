@@ -1,4 +1,5 @@
-import { Component, inject, signal, computed, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, inject, signal, computed } from '@angular/core';
+import { NgIcon } from '@ng-icons/core';
 import { IconService } from '../../services/iconService';
 import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 
@@ -7,9 +8,7 @@ type tabItem = 'languages' | 'frameworks-libraries' | 'databases' | 'tools' | 'i
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.html',
-  imports: [TitleCasePipe, UpperCasePipe],
-  standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [NgIcon, TitleCasePipe, UpperCasePipe]
 })
 export class Skills {
   protected iconService = inject(IconService);
