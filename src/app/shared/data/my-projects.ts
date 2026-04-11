@@ -6,7 +6,7 @@ export const MyProjects: Project[] = [
     title: "GifsApp",
     badges: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "TailwindCSS", "Flowbite"],
     description: "Search for gifs with history and memory storage. Built with Angular 21.",
-    githubUrl: "https://github.com/Elian1723/gifs-apps",
+    githubUrl: "https://github.com/elianbarrios/gifs-apps",
     projectUrl: "https://gifs-app-elian.netlify.app/",
     imageUrl: "assets/projects/gifs-app-trending.webp"
   },
@@ -15,7 +15,7 @@ export const MyProjects: Project[] = [
     title: "CountryApp",
     badges: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "TailwindCSS", "DaisyUI", "RxJS"],
     description: "Website to search countries by capital, country name and region with countryAPI and localStorage.",
-    githubUrl: "https://github.com/Elian1723/country-app",
+    githubUrl: "https://github.com/elianbarrios/country-app",
     projectUrl: "https://country-app-elian.netlify.app/",
     imageUrl: "assets/projects/country-app-by-region.webp"
   }
