@@ -3,6 +3,7 @@ import { NgxTypewriterComponent } from '@omnedia/ngx-typewriter';
 import { IconService } from '../../../services/iconService';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import * as socialIcons from '../../../shared/icons/socialIcons'
+import { LanguageService } from '../../../services/languageService';
 
 @Component({
   selector: 'app-greeting',
@@ -12,4 +13,5 @@ import * as socialIcons from '../../../shared/icons/socialIcons'
 })
 export class Greeting {
   protected skillIconService = inject(IconService);
+  protected languageService = inject(LanguageService);
 }

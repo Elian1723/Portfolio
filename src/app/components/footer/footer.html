@@ -1,10 +1,10 @@
 <footer class="footer footer-horizontal footer-center bg-base-300 text-base-content rounded p-10">
   <nav class="grid grid-flow-col gap-4">
-    <a class="link link-hover" [routerLink]="[]" fragment="home">Home</a>
-    <a class="link link-hover" [routerLink]="[]" fragment="about">About</a>
-    <a class="link link-hover" [routerLink]="[]" fragment="skills">Skills</a>
-    <a class="link link-hover" [routerLink]="[]" fragment="projects">Projects</a>
-    <a class="link link-hover" [routerLink]="[]" fragment="contact">Contact</a>
+    <a class="link link-hover" [routerLink]="[]" fragment="home">{{ languageService.currentLanguage() === 'en' ? 'Home' : 'Inicio' }}</a>
+    <a class="link link-hover" [routerLink]="[]" fragment="about">{{ languageService.currentLanguage() === 'en' ? 'About' : 'Sobre mí' }}</a>
+    <a class="link link-hover" [routerLink]="[]" fragment="skills">{{ languageService.currentLanguage() === 'en' ? 'Skills' : 'Habilidades' }}</a>
+    <a class="link link-hover" [routerLink]="[]" fragment="projects">{{ languageService.currentLanguage() === 'en' ? 'Projects' : 'Proyectos' }}</a>
+    <a class="link link-hover" [routerLink]="[]" fragment="contact">{{ languageService.currentLanguage() === 'en' ? 'Contact' : 'Contacto' }}</a>
   </nav>
   <nav>
     <div class="grid grid-flow-col gap-4">
@@ -26,6 +26,12 @@
     </div>
   </nav>
   <aside>
-    <p>Copyright © {{ year() }} - All right reserved by Elián Barrios</p>
+    <p>
+      {{
+        languageService.currentLanguage() === 'en'
+          ? 'Copyright © ' + year() + ' - All rights reserved by Elián Barrios'
+          : 'Copyright © ' + year() + ' - Todos los derechos reservados por Elián Barrios'
+      }}
+    </p>
   </aside>
 </footer>

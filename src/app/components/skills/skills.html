@@ -1,20 +1,14 @@
 <div>
   <div class="flex items-center -ms-4 sm:-ms-15">
     <div class="divider divider-info w-10 sm:w-44"></div>
-    <h2 class="ms-3 text-3xl font-bold">Skills</h2>
+    <h2 class="ms-3 text-3xl font-bold">{{ languageService.currentLanguage() === 'en' ? 'Skills' : 'Habilidades' }}</h2>
   </div>
 
   <div role="tablist" class="tabs tabs-border justify-center px-4 sm:px-16">
     @for (tab of tabs(); track tab) {
     <a role="tab" class="tab text-base transition-all md:text-lg" [class.tab-active]="currentTab() === tab"
       [class.text-info]="currentTab() === tab" (click)="changeCurrentTab(tab)">
-      @if(tab === 'frameworks-libraries') {
-        Frameworks & Libraries
-      } @else if (tab === 'ia') {
-        {{ 'ia' | uppercase }}
-      } @else {
-        {{ tab | titlecase }}
-      }
+      {{ getTabLabel(tab) }}
     </a>
     }
   </div>

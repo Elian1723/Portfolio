@@ -8,13 +8,19 @@
       </div>
 
       <div class="max-w-md">
-        <h1 class="text-5xl font-bold text-center lg:text-left">Oops!</h1>
+        <h1 class="text-5xl font-bold text-center lg:text-left">{{ languageService.currentLanguage() === 'en' ? 'Oops!' : '¡Ups!' }}</h1>
         <h2 class="text-4xl font-bold text-center lg:text-left mt-2">404</h2>
         <p class="py-6">
-          The page you are looking for is not available.
+          {{
+            languageService.currentLanguage() === 'en'
+              ? 'The page you are looking for is not available.'
+              : 'La página que estás buscando no está disponible.'
+          }}
         </p>
 
-        <button routerLink="/" class="btn btn-soft btn-info mt-5">Back to homepage</button>
+        <button routerLink="/" class="btn btn-soft btn-info mt-5">
+          {{ languageService.currentLanguage() === 'en' ? 'Back to homepage' : 'Volver al inicio' }}
+        </button>
       </div>
     </div>
   </div>

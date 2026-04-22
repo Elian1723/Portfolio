@@ -1,8 +1,9 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProjectService } from '../../services/projectService';
 import { NgxFadeComponent } from '@omnedia/ngx-fade';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { ionLogoOctocat, ionArrowUpRightBoxOutline } from '@ng-icons/ionicons';
+import { LanguageService } from '../../services/languageService';
 
 @Component({
   selector: 'app-projects',
@@ -12,4 +13,5 @@ import { ionLogoOctocat, ionArrowUpRightBoxOutline } from '@ng-icons/ionicons';
 })
 export class Projects {
   protected projectService = inject(ProjectService);
+  protected languageService = inject(LanguageService);
 }

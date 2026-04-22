@@ -3,7 +3,7 @@
     <aside class="w-100 pe-20 sm:pe-0">
       <ul class="timeline timeline-vertical">
         <li>
-          <div class="timeline-start">June - 2023</div>
+          <div class="timeline-start">{{ languageService.currentLanguage() === 'en' ? 'June' : 'Junio' }} - 2023</div>
           <div class="timeline-middle">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-info h-5 w-5">
               <path fill-rule="evenodd"
@@ -11,12 +11,16 @@
                 clip-rule="evenodd" />
             </svg>
           </div>
-          <div class="timeline-end timeline-box text-base">Data entry operator at El Zeppelin</div>
+          <div class="timeline-end timeline-box text-base">
+            {{ languageService.currentLanguage() === 'en' ? 'Data entry operator at El Zeppelin' : 'Operador de ingreso
+            de datos en El Zeppelin' }}
+          </div>
           <hr class="h-15" />
         </li>
         <li>
           <hr class="h-15" />
-          <div class="timeline-start">December - 2023</div>
+          <div class="timeline-start">{{ languageService.currentLanguage() === 'en' ? 'December' : 'Diciembre' }} - 2023
+          </div>
           <div class="timeline-middle">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-info h-5 w-5">
               <path fill-rule="evenodd"
@@ -24,12 +28,16 @@
                 clip-rule="evenodd" />
             </svg>
           </div>
-          <div class="timeline-end timeline-box text-base">Junior Software Developer at El Zeppelin</div>
+          <div class="timeline-end timeline-box text-base">
+            {{ languageService.currentLanguage() === 'en' ? 'Junior Software Developer at El Zeppelin' : 'Desarrollador
+            de Software Junior en El Zeppelin' }}
+          </div>
           <hr class="h-15 bg-info" />
         </li>
         <li>
           <hr class="h-15 bg-info" />
-          <div class="timeline-start">Present - {{ year() }}</div>
+          <div class="timeline-start">{{ languageService.currentLanguage() === 'en' ? 'Present' : 'Actualidad' }} - {{
+            year() }}</div>
           <div class="timeline-middle">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-info h-5 w-5">
               <path fill-rule="evenodd"
@@ -43,15 +51,21 @@
     </aside>
 
     <div class="flex flex-col items-center gap-3 lg:w-2/4">
-      <h1 class="text-3xl font-bold">About me</h1>
+      <h1 class="text-3xl font-bold">{{ languageService.currentLanguage() === 'en' ? 'About me' : 'Sobre mí' }}</h1>
 
       <p>
-        👋 Hi, I’m Elián Barrios, a full stack developer from Guatemala 🇬🇹.
+        {{ languageService.currentLanguage() === 'en'
+        ? '👋 Hi, I’m Elián Barrios, a full stack developer from Guatemala 🇬🇹.'
+        : '👋 Hola, soy Elián Barrios, un desarrollador full stack de Guatemala 🇬🇹.' }}
       </p>
       <p>
-        I am a developer passionate about software design and systems architecture. I am characterized by my interest in
-        continuous learning, innovation, and constant improvement, always seeking to add value to the projects I
-        participate in.
+        {{ languageService.currentLanguage() === 'en'
+        ? 'I am a developer passionate about software design and systems architecture. I am characterized by my interest
+        in continuous learning, innovation, and constant improvement, always seeking to add value to the projects I
+        participate in.'
+        : 'Soy un desarrollador apasionado por el diseño de software y la arquitectura de sistemas. Me caracterizo por
+        mi interés en el aprendizaje continuo, la innovación y la mejora constante, siempre buscando aportar valor a los
+        proyectos en los que participo.' }}
       </p>
 
       <svg class="w-72 mt-5 sm:mt-0lg:w-96" viewBox="0 0 500 281" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -176,23 +190,38 @@
 
       <div class="w-full text-lg flex flex-wrap justify-center gap-15 pt-10">
         <div class="flex flex-col items-center">
-          <span class="text-sm">English</span>
+          <span class="text-sm">
+            {{ languageService.currentLanguage() === 'en'
+            ? 'English'
+            : 'Inglés' }}
+          </span>
           <span class="flex text-3xl font-bold">
             A1
           </span>
         </div>
 
         <div class="flex flex-col items-center">
-          <span class="text-sm">Spanish</span>
+          <span class="text-sm">
+            {{ languageService.currentLanguage() === 'en'
+            ? 'Spanish'
+            : 'Español' }}
+          </span>
           <span class="flex text-3xl font-bold">
-            Native
+            {{ languageService.currentLanguage() === 'en'
+            ? 'Native'
+            : 'Nativo' }}
           </span>
         </div>
 
         <div class="flex flex-col items-center">
-          <span class="text-sm">Years of experience</span>
+          <span class="text-sm">
+            {{ languageService.currentLanguage() === 'en'
+            ? 'Years of experience'
+            : 'Años de experiencia' }}
+          </span>
           <div class="flex text-3xl">
-            <om-number-ticker [countTo]="yearsOfExperience()" class="font-bold"></om-number-ticker><span class="text-info">+</span>
+            <om-number-ticker [countTo]="yearsOfExperience()" class="font-bold"></om-number-ticker><span
+              class="text-info">+</span>
           </div>
         </div>
       </div>

@@ -8,14 +8,17 @@
     </a>
   </div>
 
-  <div class="navbar-end hidden lg:flex">
+  <div class="navbar-end hidden lg:flex gap-3">
     <ul class="menu menu-horizontal px-1">
-      <li><a [routerLink]="[]" fragment="home">Home</a></li>
-      <li><a [routerLink]="[]" fragment="about">About</a></li>
-      <li><a [routerLink]="[]" fragment="skills">Skills</a></li>
-      <li><a [routerLink]="[]" fragment="projects">Projects</a></li>
-      <li><a [routerLink]="[]" fragment="contact">Contact</a></li>
+      <li><a [routerLink]="[]" fragment="home">{{ languageService.currentLanguage() === 'en' ? 'Home' : 'Inicio' }}</a></li>
+      <li><a [routerLink]="[]" fragment="about">{{ languageService.currentLanguage() === 'en' ? 'About' : 'Sobre mí' }}</a></li>
+      <li><a [routerLink]="[]" fragment="skills">{{ languageService.currentLanguage() === 'en' ? 'Skills' : 'Habilidades' }}</a></li>
+      <li><a [routerLink]="[]" fragment="projects">{{ languageService.currentLanguage() === 'en' ? 'Projects' : 'Proyectos' }}</a></li>
+      <li><a [routerLink]="[]" fragment="contact">{{ languageService.currentLanguage() === 'en' ? 'Contact' : 'Contacto' }}</a></li>
     </ul>
+    <button class="btn btn-soft btn-info btn-sm" (click)="languageService.toggleLanguage()">
+      {{ languageService.currentLanguage() === 'en' ? 'ES' : 'EN' }}
+    </button>
   </div>
 
   <div class="navbar-end flex lg:hidden">
@@ -27,11 +30,16 @@
       </div>
 
       <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a [routerLink]="[]" fragment="home">Home</a></li>
-        <li><a [routerLink]="[]" fragment="about">About</a></li>
-        <li><a [routerLink]="[]" fragment="skills">Skills</a></li>
-        <li><a [routerLink]="[]" fragment="projects">Projects</a></li>
-        <li><a [routerLink]="[]" fragment="contact">Contact</a></li>
+        <li><a [routerLink]="[]" fragment="home">{{ languageService.currentLanguage() === 'en' ? 'Home' : 'Inicio' }}</a></li>
+        <li><a [routerLink]="[]" fragment="about">{{ languageService.currentLanguage() === 'en' ? 'About' : 'Sobre mí' }}</a></li>
+        <li><a [routerLink]="[]" fragment="skills">{{ languageService.currentLanguage() === 'en' ? 'Skills' : 'Habilidades' }}</a></li>
+        <li><a [routerLink]="[]" fragment="projects">{{ languageService.currentLanguage() === 'en' ? 'Projects' : 'Proyectos' }}</a></li>
+        <li><a [routerLink]="[]" fragment="contact">{{ languageService.currentLanguage() === 'en' ? 'Contact' : 'Contacto' }}</a></li>
+        <li>
+          <button class="btn btn-soft btn-info btn-sm mt-2 w-full" (click)="languageService.toggleLanguage()">
+            {{ languageService.currentLanguage() === 'en' ? 'Cambiar a español' : 'Switch to English' }}
+          </button>
+        </li>
       </ul>
     </div>
   </div>

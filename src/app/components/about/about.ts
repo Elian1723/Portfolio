@@ -1,5 +1,6 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { NgxNumberTickerComponent } from '@omnedia/ngx-number-ticker';
+import { LanguageService } from '../../services/languageService';
 
 @Component({
   selector: 'app-about',
@@ -7,6 +8,7 @@ import { NgxNumberTickerComponent } from '@omnedia/ngx-number-ticker';
   templateUrl: './about.html',
 })
 export class About {
+  protected languageService = inject(LanguageService);
   protected year = signal(new Date().getFullYear());
   private startDate = signal(new Date(2023, 11, 1));
 

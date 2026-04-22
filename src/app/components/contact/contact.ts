@@ -2,6 +2,7 @@ import { Component, ElementRef, inject, viewChild } from '@angular/core';
 import { IconService } from '../../services/iconService';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import * as socialIcons from '../../shared/icons/socialIcons'
+import { LanguageService } from '../../services/languageService';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,7 @@ import * as socialIcons from '../../shared/icons/socialIcons'
 export class Contact {
   private modalRef = viewChild<ElementRef<HTMLDialogElement>>('warning_modal');
   protected iconService = inject(IconService);
+  protected languageService = inject(LanguageService);
 
   protected submitEmail(e: Event): void {
     e.preventDefault();
